@@ -23,7 +23,6 @@ function Dashboard() {
     }
   });
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState({});
 
   const [modalToggle, setModalToggle] = useToggle(false);
   const [modalToggleRepo, setModalToggleRepo] = useToggle(false);
@@ -58,6 +57,8 @@ function Dashboard() {
           return;
         }
 
+        const response = await api.get(`/users/${values['user']}/starred`);
+
         const user = {
           id,
           login,
@@ -65,6 +66,7 @@ function Dashboard() {
           bio,
           html_url,
           location,
+          starred_repos: response.data,
         };
 
         setUsers([...users, user]);
@@ -142,7 +144,7 @@ function Dashboard() {
               <StarredRepositories
                 isOpen={modalToggleRepo}
                 closeModal={setModalToggleRepo}
-                repositoriesStarred={user.login}
+                repositories={user.starred_repos}
               />
             </main>
           ))}

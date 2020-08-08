@@ -21,3 +21,7 @@
 <h2>Criado dois modals para mostrar o mapa de localização e outro para poder listar os repositórios com star</h2>
 
 <h2>Criei um hook de toggle para não precisar criar funções que façam o handle de troca de estado</h2>
+
+<h2>Refeito lógica de carregar repositórios: Carregar assim que usuário for adicionado</h2>
+
+<h2>Refeito lógica para abrir página dos repositórios com start. Problema ao abrir pelo modal, tive de usar window.open para abrir a url.</h2>

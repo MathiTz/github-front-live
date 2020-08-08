@@ -1,26 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Overlay } from 'react-portal-overlay';
-import api from '../../services/api';
 
 import { FaRegStar } from 'react-icons/fa';
 
 import './styles.css';
 
 const StarredRepositories = (props) => {
-  const { isOpen, closeModal, repositoriesStarred } = props;
+  const { isOpen, closeModal, repositories } = props;
 
-  const [repositories, setRepositories] = useState([]);
-
-  useEffect(() => {
-    async function loadRepo() {
-      const { data } = await api.get(`users/${repositoriesStarred}/starred`);
-
-      setRepositories(data);
-    }
-
-    loadRepo();
-  }, [repositoriesStarred]);
-  console.log(repositories);
   return (
     <Overlay
       open={isOpen}
@@ -32,10 +19,14 @@ const StarredRepositories = (props) => {
         {repositories &&
           repositories.map((repository) => (
             <main key={repository.id} className="repositories__starred">
-              <p>Name: {repository.name}</p>
+              <p>
+                <span>Name</span>: {repository.name}
+              </p>
 
               <div className="repositories__starred--desc">
-                <p>Description: {repository.description}</p>
+                <p>
+                  <span>Description</span>: {repository.description}
+                </p>
 
                 <div className="starred__count">
                   <div className="stargazers__count">
@@ -44,9 +35,12 @@ const StarredRepositories = (props) => {
                     <span>{repository.stargazers_count}</span>
                   </div>
                   <a
-                    href={repository.html_url}
-                    rel="noopener noreferrer"
+                    onClick={() => {
+                      window.open(repository.html_url);
+                    }}
                     target="_blank"
+                    rel="noopener noreferrer"
+                    href={repository.html_url}
                   >
                     Github Page
                   </a>
