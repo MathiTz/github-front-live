@@ -158,7 +158,7 @@ a {
 
 .user__box--outlinks a:hover,
 .user__box--outlinks button:hover:enabled {
-  background-color: #cdb1c0;
+  background-color: #aaabad;
 }
 
 .user__box--outlinks button:disabled {
