@@ -104,7 +104,7 @@ a {
   align-items: center;
   border: 1px solid #000;
   border-radius: 5px;
-  background-color: rgb(255, 242, 242);
+  background-color: rgb(244, 240, 231);
   transition: 0.3s transform;
 }
 
@@ -147,6 +147,7 @@ a {
 
 .user__box--outlinks a,
 .user__box--outlinks button {
+  background-color: #fff;
   color: #000;
   border: 1px solid #282c34;
   border-radius: 10px;
@@ -156,6 +157,10 @@ a {
 }
 
 .user__box--outlinks a:hover,
-.user__box--outlinks button:hover {
+.user__box--outlinks button:hover:enabled {
   background-color: rgba(255, 200, 242);
+}
+
+.user__box--outlinks button:disabled {
+  color: #b4b4b4;
 }

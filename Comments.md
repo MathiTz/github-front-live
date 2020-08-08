@@ -35,3 +35,5 @@
 <h2>Adicionado efeito de hover nos cards do starred repo</h2>
 
 <h2>Criado uma ref para o form e assim poder usar o método ref</h2>
+
+<h2>Alterado a cor do botão para fazer match com os outros 2, e desabilitar a localização caso user não forneça localização do browser</h2>

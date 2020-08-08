@@ -26,6 +26,7 @@ function Dashboard() {
     }
   });
   const [loading, setLoading] = useState(false);
+  const [locationButton, setLocationButton] = useState(false);
 
   const [modalToggle, setModalToggle] = useToggle(false);
   const [modalToggleRepo, setModalToggleRepo] = useToggle(false);
@@ -34,11 +35,18 @@ function Dashboard() {
 
   useEffect(() => {
     if (geolocation) {
-      geolocation.getCurrentPosition((position) => {
-        const { coords } = position;
+      geolocation.getCurrentPosition(
+        (position) => {
+          const { coords } = position;
 
-        setLocation([coords.latitude, coords.longitude]);
-      });
+          setLocationButton(false);
+          setLocation([coords.latitude, coords.longitude]);
+        },
+        () => {
+          toast.warn('Your location would not be possible to see');
+          setLocationButton(true);
+        }
+      );
     }
   }, [geolocation]);
 
@@ -132,7 +140,11 @@ function Dashboard() {
                   >
                     Profile
                   </a>
-                  <button type="button" onClick={setModalToggle}>
+                  <button
+                    disabled={locationButton}
+                    type="button"
+                    onClick={setModalToggle}
+                  >
                     Location
                   </button>
                   <button type="button" onClick={setModalToggleRepo}>
