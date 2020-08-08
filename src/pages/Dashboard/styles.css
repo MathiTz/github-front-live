@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #f0f0f5 url('../../assets/github-background.svg') no-repeat 70%
+    top;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+button {
+  font: 16px Roboto, sans-serif;
+}
+#root {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+button {
+  cursor: pointer;
+}
+
+a,
+button {
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dashboard__title {
+  text-align: center;
+}
+
+#dashboard__form {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard__input {
+  background-color: #e4c0d2;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #282c34;
+}
+
+.dashboard__button {
+  border-radius: 10px;
+  margin-left: 20px;
+  font-size: 15px;
+  padding: 10px 20px;
+  background-color: #8cddf3;
+  transition: 0.4s background-color;
+}
+
+.dashboard__button:hover {
+  background-color: #9fdef0;
+}
+
+.user__box--wrapper {
+  max-width: 1120px;
+  height: auto;
+  margin: 10px auto;
+}
+
+.user__box {
+  width: 100%;
+  height: 150px;
+  padding: 20px 10px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: rgb(255, 242, 242);
+  transition: 0.3s transform;
+}
+
+.user__box:hover {
+  transform: scale(1.05);
+}
+
+.user__box--profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 15px;
+}
+
+.user__box img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.user__box--desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 600px;
+  height: auto;
+}
+
+.user__box--desc p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.user__box--outlinks {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.user__box--outlinks a,
+.user__box--outlinks button {
+  color: #000;
+  border: 1px solid #282c34;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 14px;
+  transition: 0.3s background-color;
+}
+
+.user__box--outlinks a:hover,
+.user__box--outlinks button:hover {
+  background-color: rgba(255, 200, 242);
+}
