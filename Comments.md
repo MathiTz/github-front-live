@@ -25,3 +25,9 @@
 <h2>Refeito lógica de carregar repositórios: Carregar assim que usuário for adicionado</h2>
 
 <h2>Refeito lógica para abrir página dos repositórios com start. Problema ao abrir pelo modal, tive de usar window.open para abrir a url.</h2>
+
+<h2>Adicionado toastify para mostrar mensagens mais amigáveis para usuário</h2>
+
+<h2>Adicionado useEffect para lidar com efeito estranho quando era iniciado a aplicação e o usuário é populado</h2>
+
+<h2>Adicionado efeito de hover nos cards do starred repo</h2>

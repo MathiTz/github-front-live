@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './styles.css';
 
 import { FaSpinner } from 'react-icons/fa';
@@ -52,7 +54,7 @@ function Dashboard() {
         const findUser = users.find((user) => user.id === id);
 
         if (findUser) {
-          alert('User already in list');
+          toast.warn('User already in list');
           setLoading(false);
           return;
         }
@@ -72,10 +74,11 @@ function Dashboard() {
         setUsers([...users, user]);
 
         localStorage.setItem('@users', JSON.stringify([...users, user]));
-
+        toast.success('User added!');
+        setValues({});
         setLoading(false);
       } catch (err) {
-        alert('Sorry, we couldnt find the user');
+        toast.error("Sorry, we couldn't find the user");
         setLoading(false);
       }
     },
@@ -144,11 +147,12 @@ function Dashboard() {
               <StarredRepositories
                 isOpen={modalToggleRepo}
                 closeModal={setModalToggleRepo}
-                repositories={user.starred_repos}
+                initialRepositories={user.starred_repos}
               />
             </main>
           ))}
       </section>
+      <ToastContainer />
     </>
   );
 }

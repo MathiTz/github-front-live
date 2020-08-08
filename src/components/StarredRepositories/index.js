@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Overlay } from 'react-portal-overlay';
 
 import { FaRegStar } from 'react-icons/fa';
@@ -6,7 +6,13 @@ import { FaRegStar } from 'react-icons/fa';
 import './styles.css';
 
 const StarredRepositories = (props) => {
-  const { isOpen, closeModal, repositories } = props;
+  const { isOpen, closeModal, initialRepositories } = props;
+
+  const [repositories, setRepositories] = useState([]);
+
+  useEffect(() => {
+    setRepositories(initialRepositories);
+  }, [initialRepositories]);
 
   return (
     <Overlay

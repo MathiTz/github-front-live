@@ -19,6 +19,11 @@
   border-radius: 10px;
   margin: 10px auto;
   padding: 10px;
+  transition: 0.3s transform;
+}
+
+.repositories__starred:hover {
+  transform: scale(1.05);
 }
 
 .repositories__starred a {
@@ -35,6 +40,11 @@
 
 .repositories__starred--desc p {
   margin: 10px 0;
+}
+
+.repositories__starred p span,
+.repositories__starred--desc p span {
+  font-weight: 700;
 }
 
 .starred__count {
