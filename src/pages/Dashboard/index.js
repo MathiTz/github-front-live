@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './styles.css';
@@ -11,6 +11,7 @@ import useToggle from '../../hook/toggle';
 import StarredRepositories from '../../components/StarredRepositories';
 
 function Dashboard() {
+  const formRef = useRef();
   const [values, setValues] = useState({});
   const [location, setLocation] = useState([]);
   const [users, setUsers] = useState(() => {
@@ -75,7 +76,7 @@ function Dashboard() {
 
         localStorage.setItem('@users', JSON.stringify([...users, user]));
         toast.success('User added!');
-        setValues({});
+        formRef.current.reset();
         setLoading(false);
       } catch (err) {
         toast.error("Sorry, we couldn't find the user");
@@ -101,7 +102,7 @@ function Dashboard() {
     <>
       <h1 className="dashboard__title">Front - Live</h1>
 
-      <form id="dashboard__form" onSubmit={handleSubmit}>
+      <form ref={formRef} id="dashboard__form" onSubmit={handleSubmit}>
         <input
           className="dashboard__input"
           name="user"

@@ -20,6 +20,8 @@
 
 <h2>Criado dois modals para mostrar o mapa de localização e outro para poder listar os repositórios com star</h2>
 
+<h2>Problema para limpar formulário</h2>
+
 <h2>Criei um hook de toggle para não precisar criar funções que façam o handle de troca de estado</h2>
 
 <h2>Refeito lógica de carregar repositórios: Carregar assim que usuário for adicionado</h2>
@@ -31,3 +33,5 @@
 <h2>Adicionado useEffect para lidar com efeito estranho quando era iniciado a aplicação e o usuário é populado</h2>
 
 <h2>Adicionado efeito de hover nos cards do starred repo</h2>
+
+<h2>Criado uma ref para o form e assim poder usar o método ref</h2>
